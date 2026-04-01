@@ -6,7 +6,13 @@
     <title>Counter</title>
 </head>
 <body>
-    <h1>0</h1>
-    <button>+</button>
+    <h1 id="result">0</h1>
+    <button class="plus" onclick="plus(+1)">+</button>
+    <button class="twoplus" onclick="plus(+2)">+2</button>
+    <button class="minus" onclick="plus(-1)">-</button>
+    <button class="reset" onclick="reset()">reset</button>
+
+    <script src="main.js"></script>
 </body>
 </html>
+<!--JS onclick = 함수 HTML onclick = "함수()"-->
