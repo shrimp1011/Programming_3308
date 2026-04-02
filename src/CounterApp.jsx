@@ -7,15 +7,25 @@ import heroImg from './assets/hero.png'
 function CounterApp() {
   //count 현재 또는 이전 상태 값, setCount(); 상태값 변경 함수
   const [count, setCount] = useState(0)
+  function plusMax10(count) {
+    if(count>=10) return 10;
+    return count+1;  }
 
   return (
     <>
     <h1>{count}</h1>
     <button onClick={() => setCount((count)=>count+1)}>+</button>
-    <button onClick={() => setCount((count)=>count+2)}>+2</button>
-    <button onClick={() => setCount((count)=>count-1)}>-</button>
-    <button onClick={(setCount(0))}>reset</button>
+    <button onClick={() => setCount((count)=>count+1)}>+2</button>
+    <button onClick={() => setCount((count)=>count+1)}>-</button>
     <button onClick={() => setCount(0)}>reset</button>
+    <button onClick={() => setCount((count)=>{
+      if(count >= 10) return 10;
+      return count+1;
+    })}>+(최대10까지)</button>
+    
+    <button onClick={(count) => count >=10?}>reset</button>
+    <button onClick={() => setCount((count)=>count+1)}>-(최대10까지)</button>
+    {/* <button onClick={(setCount(0))}>reset</button> */}
          {/* <button
         className="counter"
          onClick={() => setCount((count) => count + 1)}>
