@@ -10,7 +10,7 @@ function TodoListApp() {
             <ul>
                 <li>
                 <input type="checkbox" name="" id="chk-1" />
-                <label htmlFor="chk-1">think</label>
+                <label htmlFor="chk-1">제1의아해가무섭다고그리오</label>
                 <button>🎹</button>
                 <button>❌</button>
                 </li>
