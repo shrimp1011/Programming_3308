@@ -1,21 +1,27 @@
+import './todolist.css'
 function TodoListApp() {
 
     return (
-        <div>
-            <h1>No Think, Do It.</h1>
-            <form>
-                <input type="text" />
-                <button>Add</button>
+        <div className="todo">
+            <h1 className="todo__title">No Think, Do It.</h1>
+            <form className="todo__form">
+                <input type="text" placeholder="할 일을 입력하세요." className="todo__input"/>
+                <button type="submit" className="todo__button" TodoListApp__button--add>Add</button>
             </form>
-            <ul>
-                <li>
-                <input type="checkbox" name="" id="chk-1" />
-                <label htmlFor="chk-1">제1의아해가무섭다고그리오</label>
-                <button>🎹</button>
-                <button>❌</button>
+            <ul className="todo__list">
+                <li className="todo__item todo__item--empty">
+                    <p>할 일 없음.</p>
+                </li>
+                <li className="todo__item" todo__item--complete>
+                <input type="checkbox" name="" id="chk-1" className="todo__check"/>
+                <label htmlFor="chk-1" className="todo__label">제1의아해가무섭다고그리오</label>
+                <button className="todo__button todo__button--edit">🎹</button> 
+                
+                <button className="todo__button todo__button--edit">❌</button>
                 </li>
             </ul>
         </div>
     )
 }
 export default TodoListApp;
+//클래스는 띄어쓰기로 연결

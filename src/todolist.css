@@ -1,0 +1,65 @@
+.todo {
+    /* width: 80%; */
+    /* min-width: 400px; */
+    width: max(80%, 400px); /*보통80%최소400px*/
+    margin: 20px auto; /*위아래20px좌우 여백균등분배*/
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 16px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /*세로 아래로 2px, blur 4px*/
+}
+/* class = > className
+for = > htmlFor */
+.todo__form {
+    display: flex;
+    margin-bottom: 10px;
+    padding: 10px;
+
+}
+.todo__input {
+    padding: 10px;
+    font-size: 1.2rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin-right: 10px;
+    flex: 1; /*display : flex 안의 아이템 중 여유 공간만큼 늘리자.*/
+}
+.todo__button {
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    color: #fff;
+}
+.todo__button--add {
+    background-color: aquamarine;
+
+}
+.todo__item {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+}
+.todo__check {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    accent-color: #999;
+}
+.todo__lable {
+    margin: 0 10px;
+    flex: 1;
+
+}
+.todo__button--edit, 
+.todo__button--delete {
+    font-size: 0.8rem;
+}
+.todo__item--complete .todo__label {
+    text-decoration: line-through;
+    color: #999;
+}
+/* A>B: 바로 아래 자식
+A B: 전체 자식 중에 한 자식 */
