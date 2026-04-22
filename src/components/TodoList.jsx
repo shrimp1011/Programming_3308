@@ -1,7 +1,7 @@
 import TodoItemEmpty from './TodoItemEmpty.jsx'
 import TodoItem from './TodoItem.jsx'
 
-export default function TodoList() {
+export default function TodoList({todos, toggleTodo}) {
     return (
         <ul className="todo__list">
             {/* todos에 값이 없으면, TodoItemEmpty */}

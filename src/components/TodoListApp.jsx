@@ -5,44 +5,36 @@ import TodoHeader from './components/TodoHeader.jsx'
 import TodoAdder from './components/TodoAdder.jsx'
 import TodoItem from './components/TodoItem.jsx'
 import TodoList from './components/TodoList.jsx'
+class Todo {
+    constructor(text) {
+        this.id = Date.now();   //할일 id: 고유의 값 == new Date().getTime()
+        this.text = text;       //할일의 내용
+        this.isCompleted = false; //할일 완료 여부
+    }
+}
 
 function TodoListApp() {
-    const [todos, setTodos]= useState([]);
+    const [todos, setTodos] = useState([]);
     const addTodo = (text) => setTodos((todos) => [
-        ...todos, 
+        //이전 todos 복사
+        ...todos,
+        //newTodo 만들어서
+        //뒤에 추가하자
         new Todo(text)
-    ])
-}
-const [count, setCount] = useState(0)
-// count 정수.32비타값
-// 32비트가 바뀌면 새로 업데이트
-// setCount(count+1): 실행하려고 예약할 때 count 값 가져옴 (미리 가져올 수 있음)
-// setCount((count)=>count+1) : 실제 실행될 때 count 값 가져옴
-// const[todosk setTodos] = useState([])
-// todos 덩어리. 실제 값은 딴곳. 위치만 있음. 32비트 주소. 
-// setTodos((todos)=> [...todos, new Todo(text)])
-function TodoListApp() {
+    ]);
+    const toggleTodo = (id) => {
+        setTodos((todos) =>
+                todos.map((todo)=>
+                    todo.id === id? {...todo, isCompleted: !todo.isCompleted} : todo
+                ))
+    }
+
     return (
         <div className="todo">
-            <TodoHeader/>
-            <TodoAdder addTodo={addTodo}/>
-            <TodoList todos={todo}/>
-            {/* <h1 className="todo__title">No Think, Do It.</h1>
-            <form className="todo__form">
-                <input type="text" placeholder="할 일을 입력하세요." className="todo__input" />
-                <Button type="submit" className="todo__button todo__button--add">Add</Button>
-            </form>
-            <ul className="todo__list">
-                <TodoItemEmpty />
-                <li className="todo__item todo__item--complete">
-                    <Checkbox id="1" />
-                    <Button className="todo__button todo__button--edit">✏️</Button>
-                    <Button className="todo__button todo__button--delete">❌</Button>
-                </li>
-            </ul>
             <TodoHeader />
-            <TodoAdder />
-            <TodoList /> */}
+            <TodoAdder addTodo={addTodo} />
+            <TodoList todos={todos} toggleTodo={toggleTodo} />
         </div>
     )
 }
+
