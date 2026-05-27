@@ -20,4 +20,11 @@ If you are developing a production application, we recommend using TypeScript wi
 - `onClick={() => set함수()}`
 - `onClick={() => set함수((이전state) => 이전state + 1)}`
 
-### TodoListApp 
+### TodoListApp
+
+### DiaryApp (4-8)
+- 일기(소감) ★★★
+- `textarea` — 소감 입력
+- 날짜별 저장 (`localStorage`)
+- 목록 UI — 날짜, 별점, 내용 카드 표시, 수정/삭제 
+
