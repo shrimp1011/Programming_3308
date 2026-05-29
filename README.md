@@ -27,4 +27,3 @@ If you are developing a production application, we recommend using TypeScript wi
 - `textarea` — 소감 입력
 - 날짜별 저장 (`localStorage`)
 - 목록 UI — 날짜, 별점, 내용 카드 표시, 수정/삭제 
-
